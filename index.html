@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমাদের কোর্সসমূহ - NTRCA Preparation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset & General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Notice Bar */
+        .notice-bar {
+            background-color: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: #3498db;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Grid Layout for Cards */
+        .course-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Course Card */
+        .course-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid #3498db;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .course-card.combo {
+            border-top: 5px solid #27ae60;
+        }
+
+        .course-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .course-features {
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .course-features li {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-features li::before {
+            content: '✓';
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .course-price {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #e67e22;
+            font-weight: 700;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Registration Action */
+        .registration-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px 20px;
+            background-color: #fff;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.02);
+        }
+
+        .btn-register {
+            display: inline-block;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-register:hover {
+            background-color: #1c5980;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(41, 128, 185, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .course-card {
+                max-width: 100%;
+            }
+            .btn-register {
+                width: 90%;
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="notice-bar">
+         নোটিশ: ৩০ এপ্রিলের মধ্যে যে কোনো কোর্সে ভর্তি হলে NTRCA COMBINED MATH বইটি ফ্রি পাবেন।
+    </div>
+
+    <header class="header">
+        <h1>NTRCA প্রস্তুতি ব্যাচ</h1>
+        <p>আপনার শিক্ষক হওয়ার স্বপ্ন পূরণে আমরা আছি আপনার পাশে</p>
+    </header>
+
+    <section class="courses-section">
+        <h2 class="section-title">আমাদের কোর্সসমূহ</h2>
+        
+        <div class="course-grid">
+            
+            <div class="course-card">
+                <div class="course-title">সহকারী শিক্ষক নিবন্ধন কোর্স</div>
+                <ul class="course-features">
+                    <li>ক্লাস সংখ্যা: ১৫০+</li>
+                    <li>পরীক্ষা সংখ্যা: ১৫+</li>
+                    
+                </ul>
+                <div class="course-price">৳ ১০০০/-</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-title">প্রভাষক কোর্স</div>
+                <ul class="course-features">
+                    <li>ক্লাস সংখ্যা: ১৮০+</li>
+                    <li>পরীক্ষা সংখ্যা: ২০+</li>
+                    
+                </ul>
+                <div class="course-price">৳ ১২০০/-</div>
+            </div>
+
+            <div class="course-card combo">
+                <div class="course-title">উভয় কোর্স একত্রে</div>
+                <ul class="course-features">
+                    <li>সহকারী শিক্ষক ও প্রভাষক কোর্সের সকল সুবিধা</li>
+                    <li>সর্বোচ্চ সংখ্যক ক্লাস ও পরীক্ষা</li>
+                    <li>পূর্ণাঙ্গ প্রস্তুতি গাইডলাইন</li>
+                </ul>
+                <div class="course-price">৳ ১৫০০/-</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="registration-section">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfa8TgYVy0KSl7bNIjHWXgcCHOvDC3qUqJwSjNsASTqQzxPg/viewform?usp=publish-editor" target="_blank" class="btn-register">
+             কোর্সের ভর্তি ফর্ম পূরণ করুন
+        </a>
+        <p style="margin-top: 15px; color: #7f8c8d;">(ক্লিক করলে গুগল ফর্মে নিয়ে যাবে)</p>
+    </section>
+
+    <footer>
+        &copy; 2026 All Rights Reserved | Mashiur Math Care
+    </footer>
+
+</body>
+</html>
+
